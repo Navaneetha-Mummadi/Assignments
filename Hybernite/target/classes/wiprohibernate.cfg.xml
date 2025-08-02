@@ -23,6 +23,9 @@
 
  <mapping class="mypojos.Account"/>
  <mapping class="mypojos.Transaction"/>
+ 
+ <mapping class="mypojos.Book"/>
+   <mapping class="mypojos.Author"/>
 </session-factory>
 
 </hibernate-configuration>
