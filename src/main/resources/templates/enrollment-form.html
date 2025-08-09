@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Enrollment Form</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<h2>Enrollment Form</h2>
+
+<form th:action="@{/submitForm}" th:object="${student}" method="post">
+
+    <label>First Name:</label>
+    <input type="text" th:field="*{firstName}" />
+    <br/>
+
+    <label>Last Name:</label>
+    <input type="text" th:field="*{lastName}" />
+    <br/>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{email}" />
+    <br/>
+
+    <label>Gender:</label>
+    <input type="radio" th:field="*{gender}" value="Male" /> Male
+    <input type="radio" th:field="*{gender}" value="Female" /> Female
+    <br/>
+
+    <label>Date of Birth:</label>
+    <input type="date" th:field="*{dob}" />
+    <br/>
+
+    <label>Country:</label>
+    <select th:field="*{country}">
+        <option value="">--Select--</option>
+        <option>USA</option>
+        <option>CANADA</option>
+        <option>INDIA</option>
+    </select>
+    <br/>
+
+    <label>Subjects:</label>
+    <select multiple th:field="*{subjects}">
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Life Science</option>
+        <option>Political Science</option>
+    </select>
+    <br/>
+
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>
