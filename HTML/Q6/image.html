@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Lab — Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Image Lab — Gallery</h1>
+    <p>Practice with <code>&lt;img&gt;</code>, <code>srcset</code>, <code>&lt;picture&gt;</code>, SVG, and accessibility</p>
+</header>
+
+<main class="main-layout">
+
+    <section class="gallery-section">
+        <h2>Responsive Image Gallery</h2>
+        <div class="gallery-grid">
+            <figure>
+                <img src="rice.jpg" alt="Basmati rice — 5 kg bag">
+                <figcaption>Basmati rice — 5 kg bag.</figcaption>
+            </figure>
+
+            <figure>
+                <picture>
+                    
+                    <img src="snacks.jpg" alt="Assorted Snacks Box">
+                </picture>
+                <figcaption>Assorted Snacks Box <small>(WebP served when supported.)</small></figcaption>
+            </figure>
+
+            <figure>
+                <img src="truck.jpg" alt="Delivery truck">
+                <figcaption>Delivery truck (SVG inline with accessible title/desc).</figcaption>
+            </figure>
+
+            <figure>
+                <img src="divider.jpg" alt="" aria-hidden="true">
+                <figcaption>Decorative divider (not read by screen readers).</figcaption>
+            </figure>
+
+            <figure>
+                <img src="map.jpg" usemap="#storemap" alt="Store map with rice aisle and snacks aisle">
+                <map name="storemap">
+                    <area shape="rect" coords="0,0,100,100" href="#rice" alt="Rice aisle">
+                    <area shape="rect" coords="100,0,200,100" href="#snacks" alt="Snacks aisle">
+                </map>
+                <figcaption>Click a section to navigate to that aisle (image map)</figcaption>
+            </figure>
+        </div>
+    </section>
+    <aside class="notes">
+        <h2>Notes</h2>
+        <ul>
+            <li>Use <code>srcset</code> and <code>&lt;picture&gt;</code> to reduce bandwidth and serve modern formats.</li>
+            <li>Add <code>loading="lazy"</code> to defer-screen images.</li>
+        </ul>
+    </aside>
+</main>
+
+<footer>
+    <hr>
+    <h3>Submit Lab</h3>
+    <button>Submit Lab</button>
+</footer>
+
+</body>
+</html>

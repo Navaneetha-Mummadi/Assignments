@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Feedback Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Website Feedback Survey</h1>
+    <p>We value your opinion. Please take a minute to share your thoughts.</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<main>
+    <form action="feedback.php" method="post">
+        <section>
+            <h2>Personal Information</h2>
+            <label for="fullname">Full Name *</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="10" max="100">
+        </section>
+
+        <section>
+            <h2>Website Rating</h2>
+            <label for="design">Design (1-10):</label>
+            <input type="range" id="design" name="design" min="1" max="10">
+
+            <p>Content Quality:</p>
+            <input type="radio" id="excellent" name="content_quality" value="Excellent">
+            <label for="excellent">Excellent</label>
+            <input type="radio" id="good" name="content_quality" value="Good">
+            <label for="good">Good</label>
+            <input type="radio" id="average" name="content_quality" value="Average">
+            <label for="average">Average</label>
+            <input type="radio" id="poor" name="content_quality" value="Poor">
+            <label for="poor">Poor</label>
+
+            <label for="visited">Most visited page:</label>
+            <select id="visited" name="visited">
+                <option value="Home">Home</option>
+                <option value="Blog">Blog</option>
+                <option value="Products">Products</option>
+                <option value="Contact">Contact</option>
+            </select>
+        </section>
+
+        <section>
+            <h2>Suggestions</h2>
+            <textarea id="suggestions" name="suggestions" rows="4" placeholder="Write your suggestions here..."></textarea>
+            <input type="checkbox" id="contact" name="contact_permission">
+            <label for="contact">I agree to be contacted regarding my feedback</label>
+        </section>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <aside>
+        <h3>Why your feedback matters</h3>
+        <p>Your feedback helps us improve our website experience for everyone. Thank you!</p>
+    </aside>
+</main>
+
+<footer>
+    <p>© 2025 Website Survey</p>
+</footer>
+
+</body>
+</html>
