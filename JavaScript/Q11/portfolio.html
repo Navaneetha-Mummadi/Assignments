@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Share Market Portfolio</title>
+</head>
+<body>
+  <h2>Check Console for Output</h2>
+
+  <script>
+    function createPortfolio() {
+        let portfolio = []; 
+
+        function buyShare(company, quantity, price) {
+            portfolio.push({ company, quantity, price });
+            console.log(`Bought ${quantity} shares of ${company} at ₹${price} each.`);
+        }
+
+        function sellShare(company, quantity) {
+            let share = portfolio.find(s => s.company === company);
+
+            if (share) {
+                if (share.quantity >= quantity) {
+                    share.quantity -= quantity;
+                    console.log(`Sold ${quantity} shares of ${company}.`);
+                } else {
+                    console.log(`Not enough shares of ${company} to sell.`);
+                }
+            } else {
+                console.log(`No shares of ${company} found in portfolio.`);
+            }
+        }
+
+        function totalValue() {
+            let value = portfolio.reduce((acc, s) => acc + (s.quantity * s.price), 0);
+            console.log(`Portfolio Value: ₹${value}`);
+        }
+
+        return { buyShare, sellShare, totalValue };
+    }
+    const myPortfolio = createPortfolio();
+
+    myPortfolio.buyShare("TCS", 10, 3500);
+    myPortfolio.buyShare("Infosys", 5, 1500);
+    myPortfolio.sellShare("TCS", 3);
+    myPortfolio.totalValue();
+  </script>
+</body>
+</html>

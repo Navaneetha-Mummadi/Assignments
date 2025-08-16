@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+</head>
+<body>
+    <script>
+        alert("Welcome to the Quiz Game!");
+        let userName = prompt("What is your name?");
+        if (!userName) {
+            userName = "Player";
+        }
+
+        let isReady = confirm(userName + ", are you ready for the quiz?");
+
+        if (isReady) {
+            let answer = prompt(
+                "What is the capital of AndhraPradesh?\n" +
+                "A. Amaravathi\n" +
+                "B. Teleagana\n" +
+                "C. Chennai"
+            );
+            if (answer && answer.trim().toLowerCase() === "b") {
+                alert("Correct! Well done, " + userName + "!");
+            } else {
+                alert(" Wrong answer. The correct answer is B. Paris.");
+            }
+        } else {
+            alert("Okay, " + userName + ". Come back when you’re ready!");
+        }
+    </script>
+</body>
+</html>
